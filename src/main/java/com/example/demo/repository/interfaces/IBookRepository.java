@@ -9,10 +9,10 @@ public interface IBookRepository {
 
     void addBook(Book book);
 
-    List<Book> getAllBids();
+    List<Book> getAllBooks();
 
-    List<Book> getBidsByUserId(int userId);
+    Book getBookById(int id);
 
-    void deleteBidsByUserId(int userId);
+    void deleteBookById(int userId);
 
 }

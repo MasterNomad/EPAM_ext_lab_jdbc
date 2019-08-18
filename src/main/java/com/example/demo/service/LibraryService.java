@@ -27,8 +27,8 @@ public class LibraryService {
         bookRepository.addBook(book);
     }
 
-    public List<Book> getAllBids() {
-        return bookRepository.getAllBids();
+    public List<Book> getAllBooks() {
+        return bookRepository.getAllBooks();
     }
 
 }

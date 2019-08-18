@@ -13,9 +13,9 @@ public class DemoApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
 		LibraryService libraryService = context.getBean(LibraryService.class);
 
-		System.out.println(libraryService.getAllBids());
+		System.out.println(libraryService.getAllBooks());
 		libraryService.addBook(new Book(2, "Harry Potter", "Rouling", 1999));
-		System.out.println(libraryService.getAllBids());
+		System.out.println(libraryService.getAllBooks());
 	}
 
 }

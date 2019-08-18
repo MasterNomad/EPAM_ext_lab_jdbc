@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public class BookRepository implements IBookRepository {
@@ -29,22 +28,20 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public List<Book> getAllBids() {
+    public List<Book> getAllBooks() {
         String sql = "SELECT * FROM books ";
         return jdbcTemplate.query(sql, ROW_MAPPER);
     }
 
     @Override
-
-    public List<Book> getBidsByUserId(int userId) {
+    public Book getBookById(int id) {
         String sql = "SELECT * FROM book WHERE id = ?";
-        return jdbcTemplate.query(sql, new Object[]{userId}, ROW_MAPPER);
+        return jdbcTemplate.queryForObject(sql, new Object[]{id}, ROW_MAPPER);
     }
 
-    @Override
-    public void deleteBidsByUserId(int userId) {
+    public void deleteBookById(int id) {
         String sql = "DELETE FROM books WHERE id = ?";
-        jdbcTemplate.update(sql, userId);
+        jdbcTemplate.update(sql, id);
     }
 
 }
